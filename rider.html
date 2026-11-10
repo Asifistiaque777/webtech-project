@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rider Panel</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <h2 class="logo">Rider Panel</h2>
+      <nav>
+        <a href="#" id="nav-new" onclick="showPage('new'); return false;">New Orders</a>
+        <a href="#" id="nav-mine" onclick="showPage('mine'); return false;">My Deliveries</a>
+        <a href="#" id="nav-done" onclick="showPage('done'); return false;">Completed</a>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <h3 id="page-title">New Orders</h3>
+        <div>
+          <span id="rider-name" style="margin-right: 15px;"></span>
+          <button class="btn btn-small" onclick="logout()">Logout</button>
+        </div>
+      </header>
+
+      <main class="content" id="rider-content"></main>
+    </div>
+
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/rider.js"></script>
+</body>
+</html>
