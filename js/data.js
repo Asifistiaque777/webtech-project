@@ -97,3 +97,24 @@ function safe(text) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 }
+
+// ----- Riders (demo only: hard-coded accounts) -----
+const RIDERS = [
+  { id: "r1", name: "Rahim Uddin",   email: "rahim@rider.com", password: "rider123" },
+  { id: "r2", name: "Karim Hossain", email: "karim@rider.com", password: "rider123" },
+  { id: "r3", name: "Sumon Ali",     email: "sumon@rider.com", password: "rider123" }
+];
+
+// Order status flow:  Pending -> Accepted -> Picked Up -> Delivered
+// Badge colour for each status (used by the admin and the rider panel)
+function statusClass(status) {
+  if (status === "Delivered") return "success";
+  if (status === "Picked Up") return "purple";
+  if (status === "Accepted") return "info";
+  return "warning";                               // Pending
+}
+
+// One small number card ("Completed: 5") used on admin + rider panels
+function statCard(title, number) {
+  return '<div class="card"><h4>' + title + '</h4><p class="number">' + number + '</p></div>';
+}

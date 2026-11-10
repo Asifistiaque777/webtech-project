@@ -78,7 +78,9 @@ function placeOrder() {
     items: orderItems,
     total: subtotal + DELIVERY_CHARGE,
     date: new Date().toLocaleString(),
-    status: "Pending"
+    status: "Pending",
+    riderId: null,          // set when a rider accepts the order
+    riderName: ""
   };
 
   // 5. Save the order and clear the cart
