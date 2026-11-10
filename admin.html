@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <h2 class="logo">Admin Panel</h2>
+      <nav>
+        <a href="#" id="nav-items" onclick="showPage('items'); return false;">Items</a>
+        <a href="#" id="nav-orders" onclick="showPage('orders'); return false;">Orders</a>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <h3 id="page-title">Items</h3>
+        <div>
+          <a href="index.html" style="margin-right: 15px;">View Site</a>
+          <button class="btn btn-small" onclick="logout()">Logout</button>
+        </div>
+      </header>
+
+      <!-- The selected component (Items or Orders) is loaded here -->
+      <main class="content" id="admin-content"></main>
+    </div>
+
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="components/items.js"></script>
+  <script src="components/orders.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

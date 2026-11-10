@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="shop">
+
+  <header class="site-header">
+    <h2>🍔 FoodParcel <span>Express</span></h2>
+    <nav>
+      <a href="index.html">← Back to Order</a>
+    </nav>
+  </header>
+
+  <div class="shop-main">
+
+  <!-- Checkout form + summary -->
+  <div class="checkout-layout" id="checkout-layout">
+
+    <div class="box" id="form-box">
+      <h3>Customer Details</h3>
+
+      <form id="checkout-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Your name">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" placeholder="01XXXXXXXXX">
+        </div>
+
+        <div class="form-group">
+          <label for="address">Delivery Address</label>
+          <textarea id="address" rows="3" placeholder="House, road, area"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Payment Method</label>
+          <div class="radio-group">
+            <label><input type="radio" name="payment" value="Cash on Delivery" checked> Cash on Delivery</label>
+            <label><input type="radio" name="payment" value="bKash"> bKash</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="note">Note (optional)</label>
+          <textarea id="note" rows="2" placeholder="For parcel: write pickup address here"></textarea>
+        </div>
+
+        <p class="error" id="error"></p>
+        <button type="submit" class="btn">Place Order</button>
+      </form>
+    </div>
+
+    <div class="box" id="summary-box">
+      <h3>Order Summary</h3>
+      <div id="summary"></div>
+      <div class="totals" id="summary-totals"></div>
+    </div>
+
+  </div>
+
+  <!-- Shown when the cart is empty -->
+  <div class="box success-box" id="empty-box" style="display: none;">
+    <h3>Your cart is empty</h3>
+    <a href="index.html" class="btn">Go to Order Page</a>
+  </div>
+
+  <!-- Shown after the order is placed -->
+  <div class="box success-box" id="success-box" style="display: none;">
+    <h2>✅ Order Placed!</h2>
+    <p>Thank you! Your order ID is <b id="order-id"></b>.</p>
+    <p class="subtitle">We will contact you on your phone soon.</p>
+    <a href="index.html" class="btn">Order Again</a>
+  </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h3>🍔 FoodParcel <span>Express</span></h3>
+        <p>Fast food and parcel delivery, right to your door.</p>
+      </div>
+      <a href="admin-login.html" class="btn btn-small">Admin Login</a>
+    </div>
+    <p class="copyright">© 2026 FoodParcel Express. All rights reserved.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

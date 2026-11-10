@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-body">
+  <div class="auth-card">
+    <h1>Admin Login</h1>
+    <p class="subtitle">Please login to manage the system</p>
+
+    <form id="login-form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="admin@gmail.com">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password">
+      </div>
+
+      <p class="error" id="error"></p>
+      <button type="submit" class="btn">Login</button>
+    </form>
+
+    <p class="hint">Demo login: admin@gmail.com / admin123</p>
+    <p class="hint"><a href="index.html">← Back to Order Page</a></p>
+  </div>
+
+  <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food & Parcel Delivery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="shop">
+
+  <header class="site-header">
+    <h2>OS <span>Rush</span></h2>
+    <nav>
+      <a href="#cart">🛒 Cart</a>
+    </nav>
+  </header>
+
+  <div class="shop-main">
+  <div class="page-wrap">
+
+    <main class="menu">
+      <h2>Food Items</h2>
+      <div class="product-grid" id="food-list"></div>
+
+      <h2>Parcel Services</h2>
+      <div class="product-grid" id="parcel-list"></div>
+    </main>
+
+    <aside class="cart-box" id="cart">
+      <h3>Your Cart</h3>
+      <div id="cart-items"></div>
+      <div class="totals" id="cart-totals"></div>
+      <button class="btn" onclick="goToCheckout()">Proceed to Checkout</button>
+    </aside>
+
+  </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h3>OS<span>Rush</span></h3>
+        <p>Fast food and parcel delivery, right to your door.</p>
+      </div>
+      <a href="admin-login.html" class="btn btn-small">Admin Login</a>
+    </div>
+    <p class="copyright">© 2026 FoodParcel Express. All rights reserved.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/order.js"></script>
+</body>
+</html>
