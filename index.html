@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Food & Parcel Delivery</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/customer.css">
 </head>
 <body class="shop">
 
@@ -19,11 +20,36 @@
   <div class="page-wrap">
 
     <main class="menu">
-      <h2>Food Items</h2>
-      <div class="product-grid" id="food-list"></div>
+      <h1>Order food or send a parcel</h1>
+      <p class="subtitle">Find an item and add it to your cart.</p>
 
-      <h2>Parcel Services</h2>
-      <div class="product-grid" id="parcel-list"></div>
+      <div class="catalog-controls" role="search" aria-label="Find items">
+        <div class="catalog-field catalog-search">
+          <label for="item-search">Search by name</label>
+          <input type="search" id="item-search" placeholder="Try burger or parcel" autocomplete="off">
+        </div>
+        <div class="catalog-field">
+          <label for="category-filter">Category</label>
+          <select id="category-filter">
+            <option value="All">All items</option>
+            <option value="Food">Food</option>
+            <option value="Parcel">Parcel</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-small" id="reset-filters">Reset filters</button>
+      </div>
+      <p id="results-count" class="subtitle" role="status"></p>
+      <p id="no-results" class="catalog-empty" hidden>No items match your search. Try another name or reset the filters.</p>
+
+      <section id="food-section" aria-labelledby="food-heading">
+        <h2 id="food-heading">Food Items</h2>
+        <div class="product-grid" id="food-list"></div>
+      </section>
+
+      <section id="parcel-section" aria-labelledby="parcel-heading">
+        <h2 id="parcel-heading">Parcel Services</h2>
+        <div class="product-grid" id="parcel-list"></div>
+      </section>
     </main>
 
     <aside class="cart-box" id="cart">
