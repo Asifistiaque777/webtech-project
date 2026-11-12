@@ -1,0 +1,99 @@
+/* Customer catalogue and cart additions. Loaded only on the order page. */
+.shop .menu {
+  min-width: 0;
+}
+
+.menu h1 {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.catalog-controls {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.catalog-search {
+  flex: 1;
+  min-width: 180px;
+}
+
+.catalog-field label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.catalog-field input,
+.catalog-field select {
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 12px;
+  border: 1px solid #9ca3af;
+  border-radius: 6px;
+  background-color: #fff;
+  font: inherit;
+}
+
+.catalog-controls .btn {
+  min-height: 42px;
+}
+
+.catalog-field input:focus-visible,
+.catalog-field select:focus-visible,
+.shop button:focus-visible {
+  outline: 3px solid var(--main-dark);
+  outline-offset: 3px;
+}
+
+.catalog-empty {
+  padding: 24px;
+  background-color: #fff;
+  border: 1px solid #e8ebe4;
+  border-radius: 8px;
+}
+
+.cart-box {
+  flex-shrink: 0;
+}
+
+.cart-box .cart-row {
+  gap: 12px;
+}
+
+.cart-box .qty-btn {
+  width: 32px;
+  height: 32px;
+  margin-top: 6px;
+}
+
+.cart-remove {
+  display: block;
+  margin-top: 8px;
+  padding: 5px 0;
+  border: none;
+  background: transparent;
+  color: #b91c1c;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .shop .menu {
+    width: 100%;
+  }
+
+  .catalog-search {
+    flex-basis: 100%;
+  }
+
+  .shop .site-header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
