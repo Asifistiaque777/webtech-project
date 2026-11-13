@@ -12,7 +12,7 @@
   <header class="site-header">
     <h2>🍔 FoodParcel <span>Express</span></h2>
     <nav>
-      <a href="#cart">🛒 Cart</a>
+      <a href="#cart" id="cart-link">🛒 Cart <span class="cart-count" id="cart-count">0</span></a>
     </nav>
   </header>
 
@@ -34,6 +34,14 @@
             <option value="All">All items</option>
             <option value="Food">Food</option>
             <option value="Parcel">Parcel</option>
+          </select>
+        </div>
+        <div class="catalog-field">
+          <label for="price-sort">Sort each category</label>
+          <select id="price-sort">
+            <option value="default">Default order</option>
+            <option value="low-high">Price: Low to high</option>
+            <option value="high-low">Price: High to low</option>
           </select>
         </div>
         <button type="button" class="btn btn-small" id="reset-filters">Reset filters</button>
@@ -75,6 +83,8 @@
     </div>
     <p class="copyright">© 2026 FoodParcel Express. All rights reserved.</p>
   </footer>
+
+  <div class="cart-message" id="cart-message" role="status" aria-atomic="true"></div>
 
   <script src="js/data.js"></script>
   <script src="js/order.js"></script>
