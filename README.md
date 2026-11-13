@@ -9,7 +9,7 @@ HTML, CSS and JavaScript midterm frontend prototype for food and parcel delivery
 - [Contribution details, code explanation and demo checklist](docs/OMAR-23-54202-3.md)
 - [View this branch on GitHub](https://github.com/OMAR2631/webtech-project/tree/OMAR-23-54202-3)
 
-This change adds item search, category filtering, reset/results feedback and direct cart removal to the existing team project. The contribution document distinguishes these additions from the inherited features.
+This branch adds item search, category filtering, price sorting within each category, reset/results feedback, direct cart removal, a total-quantity cart badge and a short add-to-cart confirmation. The contribution document distinguishes these additions from the inherited features.
 
 ## Run
 

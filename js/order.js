@@ -1,5 +1,7 @@
 // ===== Order page: show items + manage the cart =====
 
+let cartMessageTimer;
+
 // Make the HTML for one item card
 function makeCard(item) {
   let button;
@@ -24,6 +26,15 @@ function showItems() {
   const items = getItems();
   const search = document.getElementById("item-search").value.trim().toLowerCase();
   const category = document.getElementById("category-filter").value;
+  const sortOrder = document.getElementById("price-sort").value;
+
+  // getItems() returns a fresh array; sorting it does not change saved data.
+  // Food and Parcel keep their own sections, sorted by price within each one.
+  if (sortOrder === "low-high") {
+    items.sort(function (a, b) { return a.price - b.price; });
+  } else if (sortOrder === "high-low") {
+    items.sort(function (a, b) { return b.price - a.price; });
+  }
   let foodHtml = "";
   let parcelHtml = "";
   let count = 0;
@@ -55,11 +66,23 @@ function showItems() {
 function resetFilters() {
   document.getElementById("item-search").value = "";
   document.getElementById("category-filter").value = "All";
+  document.getElementById("price-sort").value = "default";
   showItems();
   document.getElementById("item-search").focus();
 }
 
 // ----- Cart functions -----
+function showCartMessage(itemName) {
+  const message = document.getElementById("cart-message");
+  clearTimeout(cartMessageTimer); // Give the latest addition its full display time.
+  message.textContent = itemName + " added to cart.";
+  message.classList.add("visible");
+  cartMessageTimer = setTimeout(function () {
+    message.classList.remove("visible");
+    message.textContent = "";
+  }, 2500);
+}
+
 function addToCart(id) {
   // Stock may have changed in the admin page since this card was displayed.
   const item = findItem(id);
@@ -81,6 +104,7 @@ function addToCart(id) {
 
   saveCart(cart);
   showCart();
+  showCartMessage(item.name);
 }
 
 function changeQty(id, change) {
@@ -114,6 +138,14 @@ function removeFromCart(id) {
 
 function showCart() {
   const cart = getCart();
+  let totalQuantity = 0;
+  for (const c of cart) {
+    totalQuantity += c.qty;
+  }
+  // Count units, not distinct products: two burgers and one drink means 3.
+  document.getElementById("cart-count").textContent = totalQuantity;
+  document.getElementById("cart-link").setAttribute("aria-label",
+    "Cart, " + totalQuantity + (totalQuantity === 1 ? " item" : " items"));
   const itemsBox = document.getElementById("cart-items");
   const totalsBox = document.getElementById("cart-totals");
 
@@ -171,6 +203,7 @@ function goToCheckout() {
 // Update the list as the customer types or chooses a category.
 document.getElementById("item-search").addEventListener("input", showItems);
 document.getElementById("category-filter").addEventListener("change", showItems);
+document.getElementById("price-sort").addEventListener("change", showItems);
 document.getElementById("reset-filters").addEventListener("click", resetFilters);
 
 // Keep this page up to date when another tab changes stock or the shared cart.
