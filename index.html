@@ -64,7 +64,8 @@
       <h3>Your Cart</h3>
       <div id="cart-items"></div>
       <div class="totals" id="cart-totals"></div>
-      <button class="btn" onclick="goToCheckout()">Proceed to Checkout</button>
+      <button type="button" class="btn" id="checkout-button" onclick="goToCheckout()" disabled>Proceed to Checkout</button>
+      <button type="button" class="btn btn-danger" id="clear-cart-button" onclick="clearCart()" disabled>Clear Cart</button>
     </aside>
 
   </div>

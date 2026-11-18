@@ -92,6 +92,9 @@ function placeOrder() {
   document.getElementById("checkout-layout").style.display = "none";
   document.getElementById("success-box").style.display = "block";
   document.getElementById("order-id").innerText = order.id;
+  document.getElementById("success-name").textContent = order.name;
+  document.getElementById("success-total").textContent = "৳" + order.total;
+  document.getElementById("success-payment").textContent = order.payment;
 }
 
 // ----- Run when the page opens -----

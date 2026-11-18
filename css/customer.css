@@ -130,3 +130,14 @@
     gap: 10px;
   }
 }
+
+#clear-cart-button {
+  margin-top: 10px;
+}
+
+.cart-box .btn:disabled,
+.cart-box .btn:disabled:hover {
+  background-color: #d1d5db;
+  color: #6b7280;
+  cursor: not-allowed;
+}
