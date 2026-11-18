@@ -136,6 +136,17 @@ function removeFromCart(id) {
   showCart();
 }
 
+function clearCart() {
+  if (getCart().length === 0) return;
+  if (!confirm("Remove all items from your cart?")) return;
+
+  saveCart([]);
+  clearTimeout(cartMessageTimer);
+  document.getElementById("cart-message").classList.remove("visible");
+  document.getElementById("cart-message").textContent = "";
+  showCart();
+}
+
 function showCart() {
   const cart = getCart();
   let totalQuantity = 0;
@@ -148,6 +159,8 @@ function showCart() {
     "Cart, " + totalQuantity + (totalQuantity === 1 ? " item" : " items"));
   const itemsBox = document.getElementById("cart-items");
   const totalsBox = document.getElementById("cart-totals");
+  document.getElementById("checkout-button").disabled = cart.length === 0;
+  document.getElementById("clear-cart-button").disabled = cart.length === 0;
 
   if (cart.length === 0) {
     itemsBox.innerHTML = '<p class="empty">Your cart is empty.</p>';
