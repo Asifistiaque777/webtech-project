@@ -1,0 +1,65 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Order | FoodParcel Express</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/track-order.css">
+</head>
+<body class="shop">
+
+  <header class="site-header">
+    <h2>🍔 FoodParcel <span>Express</span></h2>
+    <nav>
+      <a href="index.html">← Back to Order</a>
+    </nav>
+  </header>
+
+  <main class="shop-main tracking-main">
+    <div class="tracking-wrap">
+
+      <section class="box tracking-search">
+        <h2>Track Your Order</h2>
+        <p class="subtitle">Enter your order ID and phone number to check your delivery status.</p>
+
+        <form id="tracking-form">
+          <div class="form-group">
+            <label for="order-id">Order ID</label>
+            <input type="text" id="order-id" placeholder="Example: ORD-1001" required>
+          </div>
+
+          <div class="form-group">
+            <label for="tracking-phone">Phone Number</label>
+            <input type="text" id="tracking-phone" placeholder="01XXXXXXXXX" required>
+          </div>
+
+          <p class="error tracking-error" id="tracking-error"></p>
+          <button type="submit" class="btn">Track Order</button>
+        </form>
+      </section>
+
+      <section id="tracking-result" aria-live="polite"></section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <h3>🍔 FoodParcel <span>Express</span></h3>
+        <p>Fast food and parcel delivery, right to your door.</p>
+      </div>
+      <div class="footer-buttons">
+        <a href="rider-login.html" class="btn btn-small btn-outline">Rider Login</a>
+        <a href="admin-login.html" class="btn btn-small">Admin Login</a>
+      </div>
+    </div>
+    <p class="copyright">© 2026 FoodParcel Express. All rights reserved.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/track-order.js"></script>
+</body>
+</html>
